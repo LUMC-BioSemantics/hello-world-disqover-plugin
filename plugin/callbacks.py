@@ -8,6 +8,26 @@ def meta_data():
         'type-id': 'instance-processor'
     }
 
+def session_options_definition():
+    return [{
+        'content_type': 'text',
+        'id': 'hello_text',
+        'name': 'Name',
+        'description': 'Enter your name here'
+
+    }, {
+        'content_type': 'bool',
+        'id': 'hello_bool',
+        'name': 'Export',
+        'description': 'Would you like to export?'
+
+    }, {
+        'content_type': 'url',
+        'id': 'hello_url',
+        'name': 'Hello website',
+        'description': 'Enter your url here.'
+    }]
+
 def process_instances(log, **kwargs):
     log('Hello world')
-    return {'result': 'Hello world'}
+    return {'message': 'Hello world'}
