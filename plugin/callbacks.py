@@ -28,6 +28,6 @@ def session_options_definition():
         'description': 'Enter your url here.'
     }]
 
-def process_instances(log, **kwargs):
+def process_instances(log, options_values, **kwargs):
     log('Hello world')
-    return {'message': 'Hello world'}
+    return {'message': f'Hello {options_values["hello_text"]}'}
