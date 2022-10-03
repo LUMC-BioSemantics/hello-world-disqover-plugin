@@ -8,6 +8,14 @@ def meta_data():
         'type-id': 'instance-processor'
     }
 
+def global_options_definition():
+    return [{
+        'content_type': 'text',
+        'id': 'global_text_value',
+        'name': 'Value',
+        'description': 'Enter a value'
+    }]
+
 def session_options_definition():
     return [{
         'content_type': 'text',
@@ -30,4 +38,4 @@ def session_options_definition():
 
 def process_instances(log, options_values, **kwargs):
     log('Hello world')
-    return {'message': f'Hello {options_values["hello_text"]}'}
+    return {'message': f'Hello {options_values["hello_text"]}: {options_values["global_text_value"]}'}
